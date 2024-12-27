@@ -13,25 +13,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/demo', function(){
-    echo "Hello World";
-});
+// Route::get('/demo', function(){
+//     echo "Hello World";
+// });
 
-Route::post('/testPost',function(){
-    echo "Testing Of Post Method";
-});
+// Route::post('/testPost',function(){
+//     echo "Testing Of Post Method";
+// });
 
-Route::any('/testPost', function(){
-    echo "Testing Of Post Method";
-});
+// Route::any('/testPost', function(){
+//     echo "Testing Of Post Method";
+// });
 
-Route::get('/demo',function(){
-    return view('demo');
-});
+// Route::get('/demoUrl',function(){
+//     return view('welcome');
+// });
+
+// Route::get('/demo/{name}/{id?}', function($name, $id = null){
+//     // return view('demo');
+//     // echo $name ." ";
+//     // echo $id;
+
+//     $data = compact('name','id');
+//     // print_r($data);
+//     return view('demo')->with($data);
+// });
+
 // Route::post('user/{id}', function($id)){
 
 // }
@@ -41,3 +52,19 @@ Route::get('/demo',function(){
 // Route::delete('user/{id}', function($id)){
 
 // }
+
+
+Route::get('/{name?}',function($name = null){
+    $demo = "<h2> Dharti </h2>";
+    $data = compact('name','demo');
+   
+    return view('home')->with($data);
+});
+
+Route::get('/welcome', function(){
+    return view('welcome');
+});
+
+Route::get('/about', function(){
+    return view('about');
+});
